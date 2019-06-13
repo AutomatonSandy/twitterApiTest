@@ -1,0 +1,21 @@
+package steps;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class FirstStory_Step {
+  @Given("I am able to access Twitter api")
+  public void accessTwitter() throws Throwable {
+	  System.out.println("This is from given");
+  }
+
+  @When("I perform a get operation on list")
+  public void perform_get() throws Throwable {
+	  System.out.println("I did that");
+  }
+  
+  @Then("I get three list members")
+  public void verifyList() 
+
+}

@@ -1,0 +1,29 @@
+package glue;
+
+import java.util.List;
+
+import org.junit.Assert;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import steps.GetOperations;
+import twitter4j.Twitter;
+import utility.TwitterSingleton;
+
+public class FirstStory_Step extends TwitterSingleton {
+	GetOperations getOperations;
+	List<String> actualResult;
+	
+  @When("I perform a get operation on list")
+  public void perform_get() throws Throwable {
+	  getOperations = new GetOperations(twitter);
+	  actualResult = getOperations.getLists();	  
+  }
+  
+  @Then("I get three list members")
+  public void verifyList() throws Throwable{
+        Assert.assertTrue(actualResult.size()==3);
+  }
+
+}

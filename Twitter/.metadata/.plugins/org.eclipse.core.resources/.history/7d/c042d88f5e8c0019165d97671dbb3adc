@@ -1,0 +1,32 @@
+package steps;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Assert;
+
+import twitter4j.ResponseList;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.UserList;
+import utility.TwitterSingleton;
+
+public class GetOperations extends TwitterSingleton{
+	private final String ownerScreenName="Sandipa13311183";	
+	ResponseList<UserList> userList;
+    List<String> actualResult ;
+
+	public List<String> getLists() throws TwitterException {
+        userList = twitter.getUserLists(ownerScreenName);
+        System.out.println(userList.size());
+        actualResult= new ArrayList<String>();
+        for(int i=0; i<userList.size();i++) {
+        	actualResult.add(userList.get(i).getName());
+        }
+	}
+	
+	public void validate_userList(int expectedUserListCount) {
+		Assert.assertTrue(actualResult.size()== expectedUserListCount);
+	}
+
+}

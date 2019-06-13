@@ -1,0 +1,21 @@
+package steps;
+
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+
+public class GetOperations {
+	private final String ownerScreenName="Sandipa13311183";
+	
+	Twitter twitter;
+    
+	public GetOperations(Twitter twitter) {
+		this.twitter = twitter;
+	}
+	
+	public void getLists() throws TwitterException {
+        System.out.println(twitter.getUserLists(ownerScreenName));
+	}
+	
+	
+
+}

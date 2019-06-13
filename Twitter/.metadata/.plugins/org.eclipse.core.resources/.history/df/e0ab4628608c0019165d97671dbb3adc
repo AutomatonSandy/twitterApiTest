@@ -1,0 +1,25 @@
+package glue;
+
+import java.util.List;
+
+import org.junit.Assert;
+import org.junit.rules.ExpectedException;
+
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import steps.GetOperations;
+
+public class FirstStory_Step{
+	GetOperations getOperations = new GetOperations();
+	
+  @When("I perform a get operation on list")
+  public void perform_get() throws Throwable {
+	  getOperations.getActualLists();	  
+  }
+  
+  @Then("I get {int} list members")
+  public void verifyList(int expectedUserListCount) throws Throwable{
+        getOperations.validate_userList(expectedUserListCount);
+  }
+
+}

@@ -1,0 +1,18 @@
+package steps;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class FirstStory_Step {
+  @Given("I have this")
+  public void i_have_this() throws Throwable {
+	  System.out.println("This is from given");
+  }
+
+  @Then("I do that")
+  public void i_do_that() throws Throwable {
+	  System.out.println("I did that");
+  }
+
+}

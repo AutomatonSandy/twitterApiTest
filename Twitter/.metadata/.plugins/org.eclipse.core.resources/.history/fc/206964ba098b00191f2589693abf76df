@@ -1,0 +1,6 @@
+Feature: First Feature file
+
+  @test
+  Scenario: Title of your scenario
+    Given I have this
+    Then I do that

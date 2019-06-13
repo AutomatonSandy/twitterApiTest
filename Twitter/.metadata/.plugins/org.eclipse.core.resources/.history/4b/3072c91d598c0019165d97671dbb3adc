@@ -1,0 +1,13 @@
+package utility;
+
+import twitter4j.Twitter;
+import twitter4j.TwitterFactory;
+
+public class TwitterSingleton {
+    Twitter twitter;
+    
+   public Twitter getTwitterInstance(){
+    	twitter = TwitterFactory.getSingleton();
+    	return twitter;
+    }
+}

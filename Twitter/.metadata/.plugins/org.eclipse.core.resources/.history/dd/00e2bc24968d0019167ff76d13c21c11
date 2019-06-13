@@ -1,0 +1,48 @@
+package steps;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Assert;
+
+import javafx.animation.Timeline;
+import twitter4j.ResponseList;
+import twitter4j.Status;
+import twitter4j.TwitterException;
+import twitter4j.UserList;
+import utility.TwitterSingleton;
+
+public class GetOperations extends TwitterSingleton {
+	private final String ownerScreenName = "Sandipa13311183";
+	ResponseList<UserList> userList;
+	ResponseList<Status> timeLineList;
+	List<String> actualResult;
+
+	// ------------ begin code get lists -----------------
+	public void getActualLists() throws TwitterException {
+		userList = twitter.getUserLists(ownerScreenName);
+		System.out.println(userList.size());
+		actualResult = new ArrayList<String>();
+		for (int i = 0; i < userList.size(); i++) {
+			actualResult.add(userList.get(i).getName());
+		}
+	}
+
+	public void validate_userList(int expectedUserListCount) {
+		Assert.assertTrue(actualResult.size() == expectedUserListCount);
+	}
+
+	// --------------------- end code get lists ----------------------
+
+	// ---------------------- begin code get timelines -----------------
+	public void getTimeline() {
+		try {
+		timeLineList = twitter.getUserTimeline();
+		}catch(TwitterException e) {
+			e.printStackTrace();
+		}
+		for (int i = 0; i < 5; i++) {
+			System.out.println(timeLineList.get(i).getText());
+		}
+	}
+}

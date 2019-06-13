@@ -1,0 +1,16 @@
+package steps;
+
+import twitter4j.Twitter;
+
+public class GetOperations {
+	Twitter twitter;
+
+	public GetOperations(Twitter twitter) {
+		this.twitter = twitter;
+	}
+	
+	
+	
+	
+
+}

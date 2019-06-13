@@ -1,0 +1,28 @@
+package glue;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import twitter4j.Twitter;
+import utility.TwitterSingleton;
+
+public class FirstStory_Step {
+	Twitter twitter;
+	TwitterSingleton twitterSingleton = new TwitterSingleton();
+	
+  @Given("I am able to access Twitter api")
+  public void accessTwitter() throws Throwable {
+	  twitter = twitterSingleton.getTwitterInstance();
+  }
+
+  @When("I perform a get operation on list")
+  public void perform_get() throws Throwable {
+	  System.out.println("I did that");
+  }
+  
+  @Then("I get three list members")
+  public void verifyList() throws Throwable{
+	  
+  }
+
+}

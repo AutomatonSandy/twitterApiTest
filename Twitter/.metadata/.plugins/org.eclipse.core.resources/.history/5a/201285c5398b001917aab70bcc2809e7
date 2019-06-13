@@ -1,0 +1,7 @@
+Feature: First Feature file
+
+  @getSubscribedLists
+  Scenario Outline: Get the subscribed Lists
+    Given I am able to access Twitter api
+    When I perform a get operation on list
+    Then I get three list members
