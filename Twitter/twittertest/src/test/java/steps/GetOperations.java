@@ -25,7 +25,7 @@ public class GetOperations extends TwitterSingleton {
 	// ------------ begin code get lists -----------------
 	public void getActualLists() throws TwitterException {
 		userList = twitter.getUserLists(ownerScreenName);
-		System.out.println(userList.size());
+		System.out.println("--------------------------"+userList);
 		actualResult = new ArrayList<String>();
 		for (int i = 0; i < userList.size(); i++) {
 			actualResult.add(userList.get(i).getName());
@@ -33,7 +33,10 @@ public class GetOperations extends TwitterSingleton {
 	}
 
 	public void validate_userList(int expectedUserListCount) {
-		Assert.assertTrue(actualResult.size() == expectedUserListCount);
+		System.out.println(" actual result "+actualResult);
+		int actualNumberOfList=actualResult.size();
+		Assert.assertTrue("acutal number of list "+actualNumberOfList
+				+" real number expected "+expectedUserListCount,actualResult.size() == expectedUserListCount);
 	}
 
 	// --------------------- end code get lists ----------------------
