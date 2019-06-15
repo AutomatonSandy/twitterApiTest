@@ -32,7 +32,9 @@ public class GetOperations extends TwitterSingleton {
 	}
 
 	public void validate_userList(int expectedUserListCount) {
-		Assert.assertTrue(actualResult.size() == expectedUserListCount);
+		int actualNumberOfList=actualResult.size();
+		Assert.assertTrue("Was expecting "+actualNumberOfList+" but got "+expectedUserListCount,
+				actualNumberOfList== expectedUserListCount);
 	}
 
 	// --------------------- end code get lists ----------------------

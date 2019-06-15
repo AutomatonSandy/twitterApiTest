@@ -9,7 +9,7 @@ Feature: First Feature file
 
     Examples: 
       | expectedUserListNumber |
-      |                      3 |
+      |                      6 |
 
   @getHomeTimeline
   Scenario Outline: Get the home timeline of the user
