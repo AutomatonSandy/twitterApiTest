@@ -11,6 +11,7 @@ import org.junit.Assert;
 
 import twitter4j.ResponseList;
 import twitter4j.Status;
+import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.UserList;
 import utility.TwitterSingleton;
@@ -32,9 +33,7 @@ public class GetOperations extends TwitterSingleton {
 	}
 
 	public void validate_userList(int expectedUserListCount) {
-		int actualNumberOfList=actualResult.size();
-		Assert.assertTrue("Was expecting "+actualNumberOfList+" but got "+expectedUserListCount,
-				actualNumberOfList== expectedUserListCount);
+		Assert.assertTrue(actualResult.size() == expectedUserListCount);
 	}
 
 	// --------------------- end code get lists ----------------------
