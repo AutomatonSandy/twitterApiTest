@@ -46,11 +46,21 @@
 			<artifactId>cucumber-core</artifactId>
 			<version>4.3.1</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-surefire-plugin</artifactId>
-			<version>3.0.0-M1</version>
-			<type>maven-plugin</type>
-		</dependency>
 	</dependencies>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.0.0-M1</version>
+					<configuration>
+						<includes>
+							<exclude>**/*_Test.java </exclude>
+						</includes>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
