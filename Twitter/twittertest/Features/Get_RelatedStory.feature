@@ -1,5 +1,5 @@
 @getOperations
-Feature: First Feature file
+Feature: We want to test some of the GET features in the twitter api
 
   @getSubscribedLists
   Scenario Outline: Get the subscribed Lists

@@ -18,14 +18,13 @@ import utility.TwitterSingleton;
 
 public class GetOperations extends TwitterSingleton {
 	private final String ownerScreenName = "Sandipa13311183";
-	ResponseList<UserList> userList;
-	ResponseList<Status> timeLineList;
-	List<String> actualResult;
+	private ResponseList<UserList> userList;
+	private ResponseList<Status> timeLineList;
+	private List<String> actualResult;
 
 	// ------------ begin code get lists -----------------
 	public void getActualLists() throws TwitterException {
 		userList = twitter.getUserLists(ownerScreenName);
-		System.out.println("--------------------------"+userList);
 		actualResult = new ArrayList<String>();
 		for (int i = 0; i < userList.size(); i++) {
 			actualResult.add(userList.get(i).getName());
@@ -33,7 +32,6 @@ public class GetOperations extends TwitterSingleton {
 	}
 
 	public void validate_userList(int expectedUserListCount) {
-		System.out.println(" actual result "+actualResult);
 		int actualNumberOfList=actualResult.size();
 		Assert.assertTrue("acutal number of list "+actualNumberOfList
 				+" real number expected "+expectedUserListCount,actualResult.size() == expectedUserListCount);
